@@ -1,0 +1,2 @@
+
+Fornece uma base para gerenciar algumas opções no painel de admin do wordpress. Os valores são gravados na tabela wp_options e são recuperados em várias áreas do layout, possibilitando customizar determinados locais do site.
