@@ -54,7 +54,7 @@ function argelia_admin() {
             
             	<input type="hidden" name="action" id="action" value="save">
                 
-                <table class="table-main group" border="0" cellspacing="0" cellpadding="5">
+                <table class="table-main group">
                     <tbody>
                     
                         <tr valign="top">
@@ -132,7 +132,7 @@ function argelia_admin() {
                 
                 
                 
-                <table class="table-home group" border="0" cellpadding="5" cellspacing="0">
+                <table class="table-home group">
                     <tbody>
                     
                     	<tr valign="top">
