@@ -1,26 +1,20 @@
 <?php
 
 if( ! empty( $_POST ) ){
-	
 	if( $_POST['action'] == 'save' ){
-				
 		foreach( $_POST as $chave => $valor ){
 			argelia_save( $chave, $valor );
 		}
 	}
-	
 	add_action('admin_notices', 'argelia_msg_update');
-
 }
 
 function argelia_save( $name, $value ){
-	
 	if ( get_option( $name ) != $value ) {
 		update_option( $name , $value );
 	} else {
 		add_option( $name , $value, '', 'no' );
 	}
-	
 }
 
 function argelia_msg_update(){
@@ -86,23 +80,23 @@ function argelia_admin() {
                     	<tr valign="top" class="area-bg">
                     		<td scope="row"><label for="argelia_home_bg">Link da imagem de fundo:</label></td>
                     		<td>
-                            	<?php $main_ornamentos = get_option('argelia_home_bg'); ?>
+                            	<?php $argelia_home_bg = get_option('argelia_home_bg'); ?>
                             	<input name="argelia_home_bg" id="argelia_home_bg" type="text" value="<?php if( $argelia_home_bg ){ echo  $argelia_home_bg; } ?>">
                                 <span class="ex">Ex: http://www.enderencodosite.com/imagem.jpg</span>
                             </td>
                     	</tr>
                 
                         <tr valign="top" class="area-menu">
-                    		<td scope="row"><label for="argelia_main_ornamentos">Link da imagem do menu superior:</label></td>
+                    		<td scope="row"><label for="argelia_home_menu_header_bg">Link da imagem de fundo do menu:</label></td>
                     		<td>
                             	<?php $argelia_home_menu_header_bg = get_option('argelia_home_menu_header_bg'); ?>
-                            	<input name="argelia_home_menu_header_bg" id="argelia_home_menu_header_bg" type="text" value="<?php if( $argelia_home_menu_header_bg ){ echo  $argelia_home_bg; } ?>">
+                            	<input name="argelia_home_menu_header_bg" id="argelia_home_menu_header_bg" type="text" value="<?php if( $argelia_home_menu_header_bg ){ echo  $argelia_home_menu_header_bg; } ?>">
                                 <span class="ex">Ex: http://www.enderencodosite.com/imagem.jpg</span>
                             </td>
                     	</tr>
  
 						<tr valign="top" class="area-menu-footer">
-                    		<td scope="row"><label for="argelia_home_footer_menu_show">Mostrar rodapé:</label></td>
+                    		<td scope="row"><label for="argelia_home_footer_menu_show">Mostrar menu:</label></td>
                     		<td>
                             	<?php $argelia_home_footer_menu_show = get_option('argelia_home_footer_menu_show'); ?>
                             	<input name="argelia_home_footer_menu_show" id="argelia_home_footer_menu_show" type="checkbox" value="1" <?php if( $argelia_home_footer_menu_show == 1 ){ echo  'checked'; } ?>>
@@ -114,8 +108,8 @@ function argelia_admin() {
                     	<tr valign="top" class="area-menu-footer">
                     		<td scope="row"><label for="argelia_home_footer_menu_bg">Link da imagem de fundo do menu do rodapé:</label></td>
                     		<td>
-                            	<?php $argelia_home_menu_header_bg = get_option('argelia_home_menu_header_bg'); ?>
-                            	<input name="argelia_home_menu_header_bg" id="argelia_home_menu_header_bg" type="text" value="<?php if( $argelia_home_menu_header_bg ){ echo  $argelia_home_bg; } ?>">
+                            	<?php $argelia_home_footer_menu_bg = get_option('argelia_home_footer_menu_bg'); ?>
+                            	<input name="argelia_home_footer_menu_bg" id="argelia_home_footer_menu_bg" type="text" value="<?php if( $argelia_home_footer_menu_bg ){ echo  $argelia_home_footer_menu_bg; } ?>">
                                 <span class="ex">Ex: http://www.enderencodosite.com/imagem.jpg</span>
                             </td>
                     	</tr>
@@ -140,7 +134,7 @@ function argelia_admin() {
                         
                     
                     	<tr valign="top" class="area-logo">
-                    		<td widtd="25%" rowspan="7" scope="row" class="img_target_sidebar">
+                    		<td widtd="25%" rowspan="8" scope="row" class="img_target_sidebar">
                             
                             	
                             
@@ -166,9 +160,18 @@ function argelia_admin() {
                         
                         
                         
+                        <tr valign="top" class="area-placa">
+                    		<td><label for="argelia_home_sidebar_placa_show">Mostrar placa do embaixador:</label></td>
+                    		<td>
+                            	<?php $argelia_home_sidebar_placa_show = get_option('argelia_home_sidebar_placa_show'); ?>
+                            	<input name="argelia_home_sidebar_placa_show" id="argelia_home_sidebar_placa_show" type="checkbox" value="1" <?php if( $argelia_home_sidebar_placa_show == 1 ){ echo  'checked'; } ?>>
+                            </td>
+                    	</tr>
+                        
+                        
                         
                         <tr valign="top" class="area-links">
-                    		<td><label for="argelia_home_sidebar_links_show2">Mostrar links:</label></td>
+                    		<td><label for="argelia_home_sidebar_links_show">Mostrar links:</label></td>
                     		<td>
                             	<?php $argelia_home_sidebar_links_show = get_option('argelia_home_sidebar_links_show'); ?>
                             	<input name="argelia_home_sidebar_links_show" id="argelia_home_sidebar_links_show" type="checkbox" value="1" <?php if( $argelia_home_sidebar_links_show == 1 ){ echo  'checked'; } ?>>
@@ -191,7 +194,7 @@ function argelia_admin() {
                     
                     
                     	<tr valign="top" class="area-posts">
-                    		<td><label for="argelia_home_sidebar_posts_show2">Mostrar ultimos posts:</label></td>
+                    		<td><label for="argelia_home_sidebar_posts_show">Mostrar ultimos posts:</label></td>
                     		<td>
                             	<?php $argelia_home_sidebar_posts_show = get_option('argelia_home_sidebar_posts_show'); ?>
                             	<input name="argelia_home_sidebar_posts_show" id="argelia_home_sidebar_posts_show" type="checkbox" value="1" <?php if( $argelia_home_sidebar_posts_show == 1 ){ echo  'checked'; } ?>>
@@ -200,7 +203,7 @@ function argelia_admin() {
                     
                     
                     	<tr valign="top" class="area-posts">
-                    		<td>Título da área de últimos posts:</td>
+                    		<td>Título últimos posts:</td>
                     		<td>
                             	<?php $argelia_home_sidebar_posts_title = get_option('argelia_home_sidebar_posts_title'); ?>
                             	<input name="argelia_home_sidebar_posts_title" id="argelia_home_sidebar_posts_title" type="text" value="<?php if( $argelia_home_sidebar_posts_title ){ echo  $argelia_home_sidebar_posts_title; } ?>">
@@ -241,10 +244,10 @@ function argelia_admin() {
                                 
                             
                             </td>
-                    		<td><label for="argelia_home_content_slide_show2">Mostrar slides:</label></td>
+                    		<td><label for="argelia_home_content_slide_show">Mostrar slides:</label></td>
                     		<td>
                             	<?php $argelia_home_content_slide_show = get_option('argelia_home_content_slide_show'); ?>
-                            	<input name="argelia_home_content_slide_show" id="argelia_home_content_slide_show" type="checkbox" value="1" <?php if( $argelia_home_sidebar_posts_show == 1 ){ echo  'checked'; } ?>>
+                            	<input name="argelia_home_content_slide_show" id="argelia_home_content_slide_show" type="checkbox" value="1" <?php if( $argelia_home_content_slide_show == 1 ){ echo  'checked'; } ?>>
                             </td>
                     	</tr>
                         
@@ -273,7 +276,7 @@ function argelia_admin() {
                         <tr valign="top" class="area-slide">
                     		<td>Número de slides:</td>
                     		<td>
-                            	<?php $argelia_home_content_slide_numero = get_option('argelia_home_sidebar_posts_title'); ?>
+                            	<?php $argelia_home_content_slide_numero = get_option('argelia_home_content_slide_numero'); ?>
                             	<input name="argelia_home_content_slide_numero" id="argelia_home_content_slide_numero" type="text" value="<?php if( $argelia_home_content_slide_numero ){ echo  $argelia_home_content_slide_numero; } ?>">
                                 
                             </td>
@@ -285,8 +288,8 @@ function argelia_admin() {
                         <tr valign="top" class="area-slide">
                     		<td>Link da imagem de fundo do slide:</td>
                     		<td>
-                            	<?php $argelia_home_content_slide_numero = get_option('argelia_home_sidebar_posts_title'); ?>
-                            	<input name="argelia_home_content_slide_numero" id="argelia_home_content_slide_numero" type="text" value="<?php if( $argelia_home_content_slide_numero ){ echo  $argelia_home_content_slide_numero; } ?>">
+                            	<?php $argelia_home_content_slide_bg = get_option('argelia_home_content_slide_bg'); ?>
+                            	<input name="argelia_home_content_slide_bg" id="argelia_home_content_slide_bg" type="text" value="<?php if( $argelia_home_content_slide_bg ){ echo  $argelia_home_content_slide_bg; } ?>">
                                 
                             </td>
                     	</tr>
@@ -295,7 +298,7 @@ function argelia_admin() {
                         
                         
                         <tr valign="top" class="area-painel">
-                    		<td><label for="argelia_home_content_panel_show2">Mostrar painel:</label></td>
+                    		<td><label for="argelia_home_content_panel_show">Mostrar painel:</label></td>
                     		<td>
                             	<?php $argelia_home_content_panel_show = get_option('argelia_home_content_panel_show'); ?>
                             	<input name="argelia_home_content_panel_show" id="argelia_home_content_panel_show" type="checkbox" value="1" <?php if( $argelia_home_content_panel_show == 1 ){ echo  'checked'; } ?>>
@@ -331,7 +334,7 @@ function argelia_admin() {
                     		<td scope="row"><label for="argelia_page_imagem_destacada">Mostrar imagem destacada:</label></td>
                     		<td>
                             	<?php $page_imagem_destacada = get_option('argelia_page_imagem_destacada'); ?>
-                            	<input name="argelia_page_imagem_destacada" id="argelia_destacada" type="checkbox" value="sim" <?php if( $page_imagem_destacada == 'sim' ){ echo  'checked'; } ?>>
+                            	<input name="argelia_page_imagem_destacada" id="argelia_destacada" type="checkbox" value="1" <?php if( $page_imagem_destacada == 1 ){ echo  'checked'; } ?>>
                             </td>
                     	</tr>
                     	
@@ -349,7 +352,7 @@ function argelia_admin() {
                     		<td scope="row"><label for="argelia_post_imagem_destacada">Mostrar imagem destacada:</label></td>
                     		<td>
                             	<?php $post_imagem_destacada = get_option('argelia_post_imagem_destacada'); ?>
-                            	<input name="argelia_post_imagem_destacada" id="argelia_post_imagem_destacada" type="checkbox" value="sim" <?php if( $post_imagem_destacada == 'sim' ){ echo  'checked'; } ?>>
+                            	<input name="argelia_post_imagem_destacada" id="argelia_post_imagem_destacada" type="checkbox" value="1" <?php if( $post_imagem_destacada == 1 ){ echo  'checked'; } ?>>
                             </td>
                     	</tr>
                         
@@ -357,7 +360,7 @@ function argelia_admin() {
                     		<td scope="row"><label for="argelia_post_data">Mostrar data:</label></td>
                     		<td>
                             	<?php $post_data = get_option('argelia_post_data'); ?>
-                            	<input name="argelia_post_data" id="argelia_post_data" type="checkbox" value="sim" <?php if( $post_data == 'sim' ){ echo  'checked'; } ?>>
+                            	<input name="argelia_post_data" id="argelia_post_data" type="checkbox" value="1" <?php if( $post_data == 1 ){ echo  'checked'; } ?>>
                             </td>
                     	</tr>
                     	
@@ -443,6 +446,16 @@ function argelia_admin() {
 					$('.img_target_sidebar')
 									.css({'background':'#FFC'})
 									.html('<img src="<?php bloginfo('template_directory'); ?>/includes/wp-options/img/area-logo.jpg" border="0">');
+				}).mouseout(function(){
+					$('.img_target_sidebar').css({'background':'#F4F4F4'}).html('');
+					$(this).css({'background':'#F4F4F4'});
+				});
+				
+				$('.area-placa').mouseover(function(){
+					$(this).css({'background':'#FFC'});
+					$('.img_target_sidebar')
+									.css({'background':'#FFC'})
+									.html('<img src="<?php bloginfo('template_directory'); ?>/includes/wp-options/img/area-placa.jpg" border="0">');
 				}).mouseout(function(){
 					$('.img_target_sidebar').css({'background':'#F4F4F4'}).html('');
 					$(this).css({'background':'#F4F4F4'});
