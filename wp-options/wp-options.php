@@ -1,12 +1,15 @@
 <?php
 
 if( ! empty( $_POST ) ){
+		
 	if( $_POST['action'] == 'save' ){
 		foreach( $_POST as $chave => $valor ){
 			argelia_save( $chave, $valor );
 		}
 	}
+	
 	add_action('admin_notices', 'argelia_msg_update');
+
 }
 
 function argelia_save( $name, $value ){
@@ -98,8 +101,15 @@ function argelia_admin() {
 						<tr valign="top" class="area-menu-footer">
                     		<td scope="row"><label for="argelia_home_footer_menu_show">Mostrar menu:</label></td>
                     		<td>
+                            
                             	<?php $argelia_home_footer_menu_show = get_option('argelia_home_footer_menu_show'); ?>
-                            	<input name="argelia_home_footer_menu_show" id="argelia_home_footer_menu_show" type="checkbox" value="1" <?php if( $argelia_home_footer_menu_show == 1 ){ echo  'checked'; } ?>>
+                                
+                                <select name="argelia_home_footer_menu_show" id="argelia_home_footer_menu_show">
+                                	<option value="sim" <?php if( $argelia_home_footer_menu_show == 'sim' ){ echo 'selected'; } ?>>sim</option>
+                                    <option value="nao"<?php if( $argelia_home_footer_menu_show == 'nao' ){ echo 'selected'; } ?>>não</option>
+                            	</select>
+                                
+                                
                             </td>
                     	</tr> 
  
@@ -142,7 +152,10 @@ function argelia_admin() {
                     		<td><label for="argelia_home_sidebar_logo_show">Mostrar logomarca:</label></td>
                     		<td>
                             	<?php $argelia_home_sidebar_logo_show = get_option('argelia_home_sidebar_logo_show'); ?>
-                            	<input name="argelia_home_sidebar_logo_show" id="argelia_home_sidebar_logo_show" type="checkbox" value="1" <?php if( $argelia_home_sidebar_logo_show == 1 ){ echo  'checked'; } ?>>
+                            	<select name="argelia_home_sidebar_logo_show" id="argelia_home_sidebar_logo_show">
+                                	<option value="sim" <?php if( $argelia_home_sidebar_logo_show == 'sim' ){ echo 'selected'; } ?>>sim</option>
+                                    <option value="nao"<?php if( $argelia_home_sidebar_logo_show == 'nao' ){ echo 'selected'; } ?>>não</option>
+                            	</select>
                             </td>
                     	</tr>
                         
@@ -164,7 +177,10 @@ function argelia_admin() {
                     		<td><label for="argelia_home_sidebar_placa_show">Mostrar placa do embaixador:</label></td>
                     		<td>
                             	<?php $argelia_home_sidebar_placa_show = get_option('argelia_home_sidebar_placa_show'); ?>
-                            	<input name="argelia_home_sidebar_placa_show" id="argelia_home_sidebar_placa_show" type="checkbox" value="1" <?php if( $argelia_home_sidebar_placa_show == 1 ){ echo  'checked'; } ?>>
+                            	<select name="argelia_home_sidebar_placa_show" id="argelia_home_sidebar_placa_show">
+                                	<option value="sim" <?php if( $argelia_home_sidebar_placa_show == 'sim' ){ echo 'selected'; } ?>>sim</option>
+                                    <option value="nao"<?php if( $argelia_home_sidebar_placa_show == 'nao' ){ echo 'selected'; } ?>>não</option>
+                            	</select>
                             </td>
                     	</tr>
                         
@@ -174,7 +190,10 @@ function argelia_admin() {
                     		<td><label for="argelia_home_sidebar_links_show">Mostrar links:</label></td>
                     		<td>
                             	<?php $argelia_home_sidebar_links_show = get_option('argelia_home_sidebar_links_show'); ?>
-                            	<input name="argelia_home_sidebar_links_show" id="argelia_home_sidebar_links_show" type="checkbox" value="1" <?php if( $argelia_home_sidebar_links_show == 1 ){ echo  'checked'; } ?>>
+                            	<select name="argelia_home_sidebar_links_show" id="argelia_home_sidebar_links_show">
+                                	<option value="sim" <?php if( $argelia_home_sidebar_links_show == 'sim' ){ echo 'selected'; } ?>>sim</option>
+                                    <option value="nao"<?php if( $argelia_home_sidebar_links_show == 'nao' ){ echo 'selected'; } ?>>não</option>
+                            	</select>
                             </td>
                     	</tr>
                         
@@ -197,7 +216,10 @@ function argelia_admin() {
                     		<td><label for="argelia_home_sidebar_posts_show">Mostrar ultimos posts:</label></td>
                     		<td>
                             	<?php $argelia_home_sidebar_posts_show = get_option('argelia_home_sidebar_posts_show'); ?>
-                            	<input name="argelia_home_sidebar_posts_show" id="argelia_home_sidebar_posts_show" type="checkbox" value="1" <?php if( $argelia_home_sidebar_posts_show == 1 ){ echo  'checked'; } ?>>
+                            	<select name="argelia_home_sidebar_posts_show" id="argelia_home_sidebar_posts_show">
+                                	<option value="sim" <?php if( $argelia_home_sidebar_posts_show == 'sim' ){ echo 'selected'; } ?>>sim</option>
+                                    <option value="nao"<?php if( $argelia_home_sidebar_posts_show == 'nao' ){ echo 'selected'; } ?>>não</option>
+                            	</select>
                             </td>
                     	</tr>
                     
@@ -247,7 +269,10 @@ function argelia_admin() {
                     		<td><label for="argelia_home_content_slide_show">Mostrar slides:</label></td>
                     		<td>
                             	<?php $argelia_home_content_slide_show = get_option('argelia_home_content_slide_show'); ?>
-                            	<input name="argelia_home_content_slide_show" id="argelia_home_content_slide_show" type="checkbox" value="1" <?php if( $argelia_home_content_slide_show == 1 ){ echo  'checked'; } ?>>
+                            	<select name="argelia_home_content_slide_show" id="argelia_home_content_slide_show">
+                                	<option value="sim" <?php if( $argelia_home_content_slide_show == 'sim' ){ echo 'selected'; } ?>>sim</option>
+                                    <option value="nao"<?php if( $argelia_home_content_slide_show == 'nao' ){ echo 'selected'; } ?>>não</option>
+                            	</select>
                             </td>
                     	</tr>
                         
@@ -301,7 +326,10 @@ function argelia_admin() {
                     		<td><label for="argelia_home_content_panel_show">Mostrar painel:</label></td>
                     		<td>
                             	<?php $argelia_home_content_panel_show = get_option('argelia_home_content_panel_show'); ?>
-                            	<input name="argelia_home_content_panel_show" id="argelia_home_content_panel_show" type="checkbox" value="1" <?php if( $argelia_home_content_panel_show == 1 ){ echo  'checked'; } ?>>
+                            	<select name="argelia_home_content_panel_show" id="argelia_home_content_panel_show">
+                                	<option value="sim" <?php if( $argelia_home_content_panel_show == 'sim' ){ echo 'selected'; } ?>>sim</option>
+                                    <option value="nao"<?php if( $argelia_home_content_panel_show == 'nao' ){ echo 'selected'; } ?>>não</option>
+                            	</select>
                             </td>
                     	</tr>
                         
@@ -333,8 +361,11 @@ function argelia_admin() {
                     	<tr valign="top">
                     		<td scope="row"><label for="argelia_page_imagem_destacada">Mostrar imagem destacada:</label></td>
                     		<td>
-                            	<?php $page_imagem_destacada = get_option('argelia_page_imagem_destacada'); ?>
-                            	<input name="argelia_page_imagem_destacada" id="argelia_destacada" type="checkbox" value="1" <?php if( $page_imagem_destacada == 1 ){ echo  'checked'; } ?>>
+                            	<?php $argelia_page_imagem_destacada = get_option('argelia_page_imagem_destacada'); ?>
+                            	<select name="argelia_page_imagem_destacada" id="argelia_page_imagem_destacada">
+                                	<option value="sim" <?php if( $argelia_page_imagem_destacada == 'sim' ){ echo 'selected'; } ?>>sim</option>
+                                    <option value="nao"<?php if( $argelia_page_imagem_destacada == 'nao' ){ echo 'selected'; } ?>>não</option>
+                            	</select>
                             </td>
                     	</tr>
                     	
@@ -351,16 +382,22 @@ function argelia_admin() {
                     	<tr valign="top">
                     		<td scope="row"><label for="argelia_post_imagem_destacada">Mostrar imagem destacada:</label></td>
                     		<td>
-                            	<?php $post_imagem_destacada = get_option('argelia_post_imagem_destacada'); ?>
-                            	<input name="argelia_post_imagem_destacada" id="argelia_post_imagem_destacada" type="checkbox" value="1" <?php if( $post_imagem_destacada == 1 ){ echo  'checked'; } ?>>
+                            	<?php $argelia_post_imagem_destacada = get_option('argelia_post_imagem_destacada'); ?>
+                            	<select name="argelia_post_imagem_destacada" id="argelia_post_imagem_destacada">
+                                	<option value="sim" <?php if( $argelia_post_imagem_destacada == 'sim' ){ echo 'selected'; } ?>>sim</option>
+                                    <option value="nao"<?php if( $argelia_post_imagem_destacada == 'nao' ){ echo 'selected'; } ?>>não</option>
+                            	</select>
                             </td>
                     	</tr>
                         
                         <tr valign="top">
                     		<td scope="row"><label for="argelia_post_data">Mostrar data:</label></td>
                     		<td>
-                            	<?php $post_data = get_option('argelia_post_data'); ?>
-                            	<input name="argelia_post_data" id="argelia_post_data" type="checkbox" value="1" <?php if( $post_data == 1 ){ echo  'checked'; } ?>>
+                            	<?php $argelia_post_data_show = get_option('argelia_post_data_show'); ?>
+                            	<select name="argelia_post_data_show" id="argelia_post_data_show">
+                                	<option value="sim" <?php if( $argelia_post_data_show == 'sim' ){ echo 'selected'; } ?>>sim</option>
+                                    <option value="nao"<?php if( $argelia_post_data_show == 'nao' ){ echo 'selected'; } ?>>não</option>
+                            	</select>
                             </td>
                     	</tr>
                     	

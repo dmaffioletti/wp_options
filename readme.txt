@@ -1,2 +1,2 @@
 
-Fornece uma base para gerenciar algumas opções no painel de admin do wordpress. Os valores são gravados na tabela wp_options e são recuperados em várias áreas do layout, possibilitando customizar determinados locais do site.
+Fornece uma estrutura de opções para modificar algumas áreas do site. Os valores são gravados na tabela wp_options e são recuperados em várias áreas do layout, possibilitando customizar determinados locais do site. Entre na pasta docs e veja a imagem do mapeamento. Esta estrutura é simples e fácil de ser implementada para qualquer outro layout.
