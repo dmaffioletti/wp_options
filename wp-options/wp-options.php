@@ -260,10 +260,11 @@ function argelia_admin() {
                     	</tr>
                         
                     	
-                        <tr valign="top" class="area-slide" class="area-slide">
+                        <tr valign="top" class="area-slide">
+                        
                     		<td rowspan="6" scope="row" class="img_target_content">
                             	
-                                
+                        		        
                             
                             </td>
                     		<td><label for="argelia_home_content_slide_show">Mostrar slides:</label></td>
@@ -354,11 +355,19 @@ function argelia_admin() {
                 
                 
                 
-                
                 <table class="table-page group">
                     <tbody>
                     
                     	<tr valign="top">
+                    		<td colspan="3" scope="row" class="title-th">
+                            	CONTEÚDO
+                            </td>
+                    	</tr>
+                    
+                    	<tr valign="top" class="area-page-img">
+                        	<td scope="row" class="img_target_page">
+                            	carregando...
+                            </td>
                     		<td scope="row"><label for="argelia_page_imagem_destacada">Mostrar imagem destacada:</label></td>
                     		<td>
                             	<?php $argelia_page_imagem_destacada = get_option('argelia_page_imagem_destacada'); ?>
@@ -368,7 +377,8 @@ function argelia_admin() {
                             	</select>
                             </td>
                     	</tr>
-                    	
+                    
+                        
                     </tbody>
                 </table>
                 
@@ -380,6 +390,15 @@ function argelia_admin() {
                     <tbody>
                     
                     	<tr valign="top">
+                    		<td colspan="3" scope="row" class="title-th">
+                            	CONTEÚDO
+                            </td>
+                    	</tr>
+                    
+                    	<tr valign="top">
+                        	<td rowspan="2" scope="row" class="img_target_post">
+                            	carregando...
+                            </td>
                     		<td scope="row"><label for="argelia_post_imagem_destacada">Mostrar imagem destacada:</label></td>
                     		<td>
                             	<?php $argelia_post_imagem_destacada = get_option('argelia_post_imagem_destacada'); ?>

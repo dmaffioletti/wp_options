@@ -22,7 +22,7 @@ tr:nth-child(2n+1) { background: #F4F4F4; }
 td { border-right: 1px solid #C1DAD7; border-bottom: 1px solid #C1DAD7; padding:10px; color: #4f6b72; font-size:11px; }
 
 .title-th{ background:#CCC;	color:#000;	font-size:18px;	padding:10px; }
-.img_target_sidebar, .img_target_content, .img_target_comum{ width:245px; height:300px !important; margin:0; }
+.img_target_sidebar, .img_target_content, .img_target_comum, img_target_page{ width:245px; height:300px !important; margin:0; }
 
 td input[type=text]{
 	width:40%;	
